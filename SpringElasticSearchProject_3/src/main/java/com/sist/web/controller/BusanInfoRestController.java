@@ -32,4 +32,16 @@ public class BusanInfoRestController {
 		
 		return map;
 	}
+	
+	@GetMapping("/info/list_react")
+	public Map info_list(int page)
+	{
+		List<BusanInfoEntity> list=bService.getBusanInfoAll(page);
+		int[] data=bService.getPageDatas(page);
+		Map map=new HashMap();
+		map.put("list", list);
+		map.put("page",data);
+		
+		return map;
+ 	}
 }
