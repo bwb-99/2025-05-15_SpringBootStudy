@@ -7,9 +7,10 @@ import org.springframework.stereotype.Service;
 
 import com.sist.web.dao.BusanFoodRepository;
 import com.sist.web.dao.BusanInfoRepository;
+import com.sist.web.entity.BusanFoodEntity;
 import com.sist.web.entity.BusanInfoEntity;
 import com.sist.web.vo.BusanFoodVO;
-
+// 40-60
 @Service
 public class BuasnFoodServiceImpl implements BusanFoodService{
     @Autowired
@@ -38,6 +39,26 @@ public class BuasnFoodServiceImpl implements BusanFoodService{
 	public int busanFoodTotalPage() {
 		// TODO Auto-generated method stub
 		return bDao.busanFoodTotalPage();
+	}
+	@Override
+	public BusanFoodEntity busanDetailData(int fno) {
+		// TODO Auto-generated method stub
+		return bDao.findByFno(fno);
+	}
+	@Override
+	public List<BusanInfoEntity> busanInfoListData(int cno, int start) {
+		// TODO Auto-generated method stub
+		return iDao.busanInfoListData(cno, start);
+	}
+	@Override
+	public int buasnTotalPage(int cno) {
+		// TODO Auto-generated method stub
+		return iDao.buasnTotalPage(cno);
+	}
+	@Override
+	public List<BusanInfoEntity> findByTitleContaining(String title) {
+		// TODO Auto-generated method stub
+		return iDao.findByTitleContaining(title);
 	}
 
 }
