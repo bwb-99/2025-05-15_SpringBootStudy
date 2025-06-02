@@ -60,5 +60,10 @@ public class BuasnFoodServiceImpl implements BusanFoodService{
 		// TODO Auto-generated method stub
 		return iDao.findByTitleContaining(title);
 	}
+	@Override
+	public BusanInfoEntity busanInfoDetailData(int no) {
+		// TODO Auto-generated method stub
+		return iDao.findByNo(no);
+	}
 
 }
