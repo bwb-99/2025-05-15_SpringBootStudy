@@ -1,4 +1,3 @@
-
 package com.sist.web.dao;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -31,7 +30,7 @@ public interface BoardRepository extends JpaRepository<BoardEntity, Integer>{
 	// 페이징 => LIMIT 시작,갯수 
 	@Query(value="SELECT no,subject,name,regdate,hit "
 			    +"FROM board ORDER BY no DESC "
-			    +"LIMIT :start,10",nativeQuery = true)
+			    +"LIMIT start,10",nativeQuery = true)
 	public List<BoardVO> boardListData(@Param("start") int start);
 	// public Page<BoardVO> findAll(Pageable pg)
 	

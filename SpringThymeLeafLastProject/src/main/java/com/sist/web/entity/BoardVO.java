@@ -1,3 +1,4 @@
+
 package com.sist.web.entity;
 // SELECT * FROM ~~
 // SELECT no,subject,name,regdate,hit
