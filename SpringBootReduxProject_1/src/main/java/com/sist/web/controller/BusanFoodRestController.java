@@ -17,7 +17,7 @@ public class BusanFoodRestController {
 	private BusanFoodRepository bDao;
 	
 	@GetMapping("/food/list_react")
-	public Map food_list(@RequestParam("page") int page)
+	public void food_list(@RequestParam("page") int page)
 	{
 		int rowSize=12;
 		int start=(rowSize*page)-rowSize;

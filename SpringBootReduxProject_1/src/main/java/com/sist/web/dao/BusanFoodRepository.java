@@ -12,7 +12,7 @@ import java.util.*;
 public interface BusanFoodRepository extends JpaRepository<BusanFoodEntity, Integer>{
 	@Query(value="SELECT fno,name,poster FROM busan_food "
 			+ "ORDER BY fno ASC "
-			+ "LIMIT :start,12",nativeQuery = true)
+			+ "LIMIT start,12",nativeQuery = true)
 	public List<BusanFoodVO> busanListData(@Param("start") Integer start);
 	
 	// SELECT * FROM busan_food WHERE fno=?
