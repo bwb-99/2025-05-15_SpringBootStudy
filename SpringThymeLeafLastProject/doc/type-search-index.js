@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"com.sist.web.controller","l":"BoardController"},{"p":"com.sist.web.entity","l":"BoardEntity"},{"p":"com.sist.web.dao","l":"BoardRepository"},{"p":"com.sist.web.entity","l":"BoardVO"},{"p":"com.sist.web","l":"SpringThymeLeafLastProjectApplication"}];updateSearchResults();
