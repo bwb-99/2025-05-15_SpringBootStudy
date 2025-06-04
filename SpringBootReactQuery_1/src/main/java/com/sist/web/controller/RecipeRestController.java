@@ -76,4 +76,19 @@ public class RecipeRestController {
 	  return new ResponseEntity<>(map,HttpStatus.OK);
   }
   
+  @GetMapping("/recipe/find/{page}/{title}")
+  public ResponseEntity<Map> recipe_find(@PathVariable("page") int page,
+		  @PathVariable("title") String title)
+  {
+	  Map map=new HashMap();
+	  try
+	  {
+		  map=rService.recipeFindData(page, title);
+	  }catch(Exception ex)
+	  {
+		  return new ResponseEntity<>(null,HttpStatus.INTERNAL_SERVER_ERROR);
+	  }
+	  return new ResponseEntity<>(map,HttpStatus.OK);
+  }
+  
 }

@@ -12,4 +12,6 @@ public interface RecipeService {
 	public List<RecipeVO> recipeListData(int start,int end);
     public int recipeTotalPage();
     public Map recipeDetailData(int no);
+    public Map recipeFindData(int page,String title);
+    
 }

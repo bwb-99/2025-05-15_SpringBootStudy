@@ -100,7 +100,6 @@ public class EBusanFoodController {
 	   
 	   return "busan/list";
 	  
-	   
    }
    @RequestMapping("/busan/find")
    public String busan_find(@RequestParam(name="type",required = false) String type,Model model)

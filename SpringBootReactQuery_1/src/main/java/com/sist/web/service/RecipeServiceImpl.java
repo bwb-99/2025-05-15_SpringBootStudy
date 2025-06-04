@@ -80,5 +80,31 @@ public class RecipeServiceImpl implements RecipeService{
 		// TODO Auto-generated method stub
 		return rDao.recipeTotalPage();
 	}
+    // BI 
+	@Override
+	public Map recipeFindData(int page, String title) {
+		// TODO Auto-generated method stub
+		  Map map=new HashMap();
+		  int rowSize=12;
+		  int start=(rowSize*page)-(rowSize-1);
+		  int end=rowSize*page;
+		  List<RecipeVO> list=rDao.recipeFindData(start, end, title);
+		  int totalpage=rDao.recipeFindTotalPage(title);
+		  
+		  final int BLOCK=10;
+		  int startPage=((page-1)/BLOCK*BLOCK)+1;
+		  int endPage=((page-1)/BLOCK*BLOCK)+BLOCK;
+		  
+		  if (endPage>totalpage)
+			   endPage=totalpage;
+		  
+		  map.put("rList", list);
+		  map.put("curpage", page);
+		  map.put("totalpage", totalpage);
+		  map.put("startPage", startPage);
+		  map.put("endPage", endPage);
+		return map;
+	}
 
+	
 }
